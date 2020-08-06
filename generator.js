@@ -1,12 +1,13 @@
 const fs = require('fs');
 const express = require('express');
+const favicon = require('serve-favicon');
 const path = require('path');
 const gm = require('gm').subClass({ imageMagick: true });
 const { responseReceived, randomize } = require('./helperfunctions')
 const port = process.env.PORT || 3000;
 const app = express();
 
-// const uiDir = path.join(__dirname, '/UI');
+app.use(favicon(path.join(__dirname, 'UI', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'UI')));
 
 const fileDir = path.join(__dirname, '/photos');
@@ -120,9 +121,9 @@ app.get('/:width/:height', (req, res) => {
     });
 });
 
-// app.get('*', (req, res) => {
-//   res.redirect('/error');
-// })
+app.get('*', (req, res) => {
+  res.redirect('/error');
+})
 
 app.listen(port, () => {
   console.log(`running on port: ${port}`);

@@ -12,7 +12,8 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
-    "gm": "^1.23.1"
+    "gm": "^1.23.1",
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
     "css-loader": "^4.2.0",
