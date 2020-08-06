@@ -10,8 +10,9 @@ const Left = x => ({
  })
 
 const sizeLimit = 1500;
-const responseReceived = x => (x !== null || x !== undefined) && (Number(x) < sizeLimit && !Number.isInteger(x)) ? Right(x) : Left(x);
+const checkVal = x => (x !== null || x !== undefined) && (Number(x) < sizeLimit && Number(x) > 0);
+const responseReceived = x => checkVal(x) ? Right(x) : Left(x);
 
 const randomize = xs => xs[Math.floor(Math.random() * xs.length)]; 
 
-module.exports = { responseReceived, randomize };
+module.exports = { checkVal, responseReceived, randomize };
