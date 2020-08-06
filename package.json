@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon generator.js",
+    "build": "webpack --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Drake Aiman",
@@ -14,7 +15,16 @@
     "gm": "^1.23.1"
   },
   "devDependencies": {
+    "css-loader": "^4.2.0",
+    "file-loader": "^6.0.0",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
     "jest": "^26.2.2",
-    "nodemon": "^2.0.4"
+    "mini-css-extract-plugin": "^0.9.0",
+    "nodemon": "^2.0.4",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "terser-webpack-plugin": "^4.0.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   }
 }

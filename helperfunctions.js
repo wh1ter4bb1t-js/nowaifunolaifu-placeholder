@@ -10,7 +10,7 @@ const Left = x => ({
  })
 
 const sizeLimit = 1500;
-const responseReceived = x => (x !== null || x !== undefined) && x < sizeLimit ? Right(x) : Left(x);
+const responseReceived = x => (x !== null || x !== undefined) && (Number(x) < sizeLimit && !Number.isInteger(x)) ? Right(x) : Left(x);
 
 const randomize = xs => xs[Math.floor(Math.random() * xs.length)]; 
 
