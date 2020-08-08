@@ -4,10 +4,15 @@
   "description": "an placeholder image generator for all the waifus",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "dev": "nodemon server.js",
     "build": "webpack --config webpack.config.js",
     "test:watch": "jest --watch",
-    "test": "jest"
+    "test:coverage": "jest --coverage",
+    "test:e2e": "cypress open",
+    "test:e2erun": "cypress run",
+    "test": "jest",
+    "test:full": "start & npm run test && npm run test:e2erun"
   },
   "author": "Drake Aiman",
   "license": "MIT",
@@ -19,6 +24,7 @@
   "devDependencies": {
     "@types/jest": "^26.0.9",
     "css-loader": "^4.2.0",
+    "cypress": "^4.12.1",
     "file-loader": "^6.0.0",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
